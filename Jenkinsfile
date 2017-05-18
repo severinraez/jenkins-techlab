@@ -4,7 +4,7 @@ properties([
         pollSCM('H/5 * * * *'),
         cron('@midnight')
     ]),
-    parameters([string(defaultValue: 'bar', description: '', name: 'foo')])
+    parameters([string(defaultValue: 'barr', description: '', name: 'foo')])
 ])
 
 timestamps() {
