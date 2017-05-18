@@ -8,9 +8,11 @@ properties([
 
 timestamps() {
     timeout(time: 10, unit: 'MINUTES') {
-        node {
+        node(env.JOB_NAME.split('/')[0]) {
             stage('Greeting') {
-                echo 'Hello, World!'
+                withEnv(["JAVA_HOME=${tool 'jdk8_oracle'}", "PATH+MAVEN=${tool 'maven35'}/bin:${env.JAVA_HOME}/bin"]) {
+                    sh "mvn --version"
+                }
             }
         }
     }
