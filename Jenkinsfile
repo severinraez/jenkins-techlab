@@ -11,7 +11,7 @@ timestamps() {
     timeout(time: 10, unit: 'MINUTES') {
         node {
             stage('Greeting') {
-                echo "Value of foo is ${env.foo}"
+                echo "Value of env foo is ${env.foo}, value of foo is ${foo}"
             }
         }
     }
