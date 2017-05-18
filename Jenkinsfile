@@ -7,9 +7,6 @@ properties([
     parameters([string(defaultValue: 'bar', description: '', name: 'foo')])
 ])
 
-
-properties([, pipelineTriggers([])])
-
 timestamps() {
     timeout(time: 10, unit: 'MINUTES') {
         node {
