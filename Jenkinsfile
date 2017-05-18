@@ -26,6 +26,7 @@ pipeline {
     }
     post {
         success {
+            mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'Build OK', to: 'raez@puzzle.ch'
             rocketSend avatar: 'https://chat.puzzle.ch/emoji-custom/success.png', channel: 'jenkins-techlab', message: "Build success - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", rawMessage: true
         }
         unstable {
